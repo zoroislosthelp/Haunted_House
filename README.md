@@ -1,3 +1,19 @@
+# Haunted House
+A python based text game. Explore different rooms while collecting items and completing challenges from characters!
+
+## How does the game work?
+The user can type the following commands:<br>
+```go {direction}```: Go to a different room based on the specified directions.<br>
+```look```: Gives the description of the room the user is in. Also provides the list of items in that room.<br>
+```take {item}```: Take the item which is present in the room.<br>
+```talk {character}```: Talk to the specified npcs.<br>
+```inventory```: Returns the contents of the inventory.<br>
+```unlock```: Unlocks the treasure box if conditions are met.<br>
+```quit```: Ends the game.
+
+## Goal of the Game
+Find the treasure box in one of the rooms. Score maximum points by completing challenges and collecting items.
+
 ## How to start?
 
 - Fork the Repository
@@ -6,10 +22,10 @@
 ``` git clone https://github.com/IEEE-VIT/Haunted_House && cd Haunted_House```
 - Make and activate a virtual env.
 - Install the requirements ```pip install -r requirements.txt```
-- Open python terminal and download the following nltk package 
-```nltk.download('punkt')```
-```nltk.download('stopwords')```
-```nltk.download('wordnet')```
+- Open python terminal and download the following nltk packages <br>
+```nltk.download('punkt')```<br>
+```nltk.download('stopwords')```<br>
+```nltk.download('wordnet')```<br>
 - Create a new branch with your feature name
 ``` git branch <name>```
 - Commit your changes
