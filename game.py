@@ -58,7 +58,8 @@ def look_around():
     room_dict = rooms[current_room]
     room_description = room_dict[description]
     room_items = room_dict[items]
-
+    room_str = f"Description : {room_description}\nItems: {room_items}"
+    return room_str
 
 
 '''
@@ -91,7 +92,7 @@ The user looses 30 points.
 Return a string of appropiate msg if rats exists else return None 
 '''
 def handle_rats():
-    pass
+   pass
 
 
 
