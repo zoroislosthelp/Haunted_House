@@ -11,6 +11,26 @@ The user can type the following commands:<br>
 ```unlock```: Unlocks the treasure box if conditions are met.<br>
 ```quit```: Ends the game.
 
+## Description of NPCs
+The game has the following NPCs:
+
+1. Ghost: A translucent figure floats in front of you.
+2. Witch: A wicked witch stands before you.
+3. Knight: A brave knight in shining armor awaits your arrival
+4. Sorcerer: A mysterious sorcerer with a pointed hat stands here
+
+## Description of the rooms
+The game has the following rooms:
+
+1. Hallway: You are in a dark and spooky hallway
+2. Kitchen: You are in a dusty old kitchen with cobwebs
+3. Pantry: You are in a small pantry filled with shelves
+4. Living Room: You are in a creepy living room with creaky furniture
+5. Library: You are in a dimly lit library filled with old books
+6. Bedroom: You are in a spooky bedroom with a large, unmade bed
+7. Basement: You are in a dimly lit basement with a musty smell
+8. Attic: You are in a dusty attic filled with old furniture and cobwebs 
+
 ## Goal of the Game
 Find the treasure box in one of the rooms. Score maximum points by completing challenges and collecting items.
 
