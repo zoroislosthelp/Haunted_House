@@ -96,7 +96,18 @@ The user looses 30 points.
 Return a string of appropiate msg if rats exists else return None 
 '''
 def handle_rats():
-    pass
+    global current_room, score
+    room_dict = rooms[current_room]
+    rat_status = False                  # Initializing rat_status variable
+    if "rats" in room_dict.getKeys():       
+        rat_status = room_dict[rats]
+        if rat_status == True and "bread" in inventory:
+            score -= 30
+            return "You were attacked by rats, you lost 30 points"
+    else:
+        return None
+
+
 
 
 
@@ -106,8 +117,19 @@ Call handel_rats() function to check if rats exist
 Everytime user enters a new room, give the description of the room.
 '''
 def go_to(tokens):
+    global current_room
     direction = tokens[tokens.index("go") + 1]
-    pass
+    room_dict = rooms[current_room]
+    room_exits = room_dict[exits]
+    current_room = room_exits[direction]
+    rat_stat = handle_rats()
+    if rat_stat != None:
+        return rat_stat
+    else:
+        room_dict = rooms[current_room]
+        room_desc = f"{room_dict[description]}"
+        return room_desc
+    
 
 '''
 Write a function to talk to the npcs.
