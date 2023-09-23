@@ -24,5 +24,23 @@ npcs = {
         "riddle": "What has keys but can't open locks?",
         "answer": "piano",
         "reward": "You answered my riddle correctly. You get 20 points",
+    },
+    "queen":{
+        "description": "A brave queen",
+        "dialogue": "fight me if you can",
+        "riddle": "does the night kingdom really exsist",
+        "answer": "yes",
+        "reward": "You answered my riddle correctly. You get 20 points",
+    },
+    
+
+    "magical_dog":{
+        "description":"A powerful dog with the potion immortality.",
+        "dialogue":"I lost a bone 3 days ago which i loved to eat.",
+        "item_required":"bone",
+        "reward":"Lovely, here take 20 points."
+        
+        
     }
+
 }

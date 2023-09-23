@@ -41,9 +41,11 @@ Print the dialougue and reward of the ghost.
 Award 20 points for finding the required item.
 '''
 def ghost_challenge(npc, score):
-    
     #Write your code here
-
+    print(f"Ghost: {npc['dialogue']}")
+    print(f"Ghost: {npc['reward']}")
+    
+    score += 20
     return score
 
 
@@ -56,7 +58,11 @@ else they loose 5 points.
 '''
 def sorcerer_challenge(npc, score):
     print(f"Sorcerer: {npc['dialogue']}")
-
-# write your code here
-
+    print("Riddle: ",{"sorcerer"["riddle"]})
+    ans=input()
+    if(ans=="piano"):
+        print({"sorcerer"["reward"]})
+        score+=20
+    else:
+        score-=5
     return score
