@@ -181,7 +181,33 @@ If the mentioned npc doesnt exist in npcs then return "{character} is not there!
 '''
 def talk_to(tokens):
     character = " ".join(tokens[tokens.index("talk") + 1:])
-    pass
+    user_input = input("Which npc you want to talk to: ")
+    item = input("Enter required item: ")
+    if user_input == "witch":
+            if item == npcs['item_required']:
+                return witch_challenge()
+            else:
+                print(f"{npcs['witch']['dialogue']} You need {npcs['witch']['required_item']} if you need my help")
+    elif user_input == "knight":
+            if item == npcs['item_required']:
+                return knight_challenge()
+            else:
+                print(f"{npcs['knight']['dialogue']} You need {npcs['knight']['required_item']} if you need my help")
+    elif user_input == "ghost":
+            if item == npcs['item_required']:
+                return ghost_challenge()
+            else:
+                print(f"{npcs['ghost']['dialogue']} You need {npcs['ghost']['required_item']} if you need my help")
+    elif user_input == "sorcerer":
+            if item == npcs['item_required']:
+                return sorcerer_challenge() 
+            else:
+                print(f"{npcs['sorcerer']['dialogue']} You need {npcs['sorcerer']['required_item']} if you need my help")
+    
+    if user_input == "witch" or "knight" or "ghost" or "sorcerer":
+            print(f"Updated score is {score}")
+    else: 
+            print(f"{user_input} is not here!")
 
 
 '''
