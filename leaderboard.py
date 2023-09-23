@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 
 class Leaderboard:
     def __init__(self, filename="lb.csv"):
@@ -13,7 +14,10 @@ class Leaderboard:
     def load(self):
         self.data = []
         #write your code here
-        pass
+        file = csv.reader("/lb.csv")
+        for data in file:
+            dic = {data}
+            data.append(dic)
 
 
 
@@ -21,9 +25,11 @@ class Leaderboard:
     Write the save function that saves all the scores to the CSV file 
     in highest to lowest scores.
     '''
-    def save(self):
+    def save(self,score):
         #write your code here
-        pass
+        f = open('/lb.csv','w')
+        write = csv.writer(f)
+        write.writerow(score)
 
 
     '''
@@ -41,6 +47,8 @@ class Leaderboard:
     Display the scores of each and every person in the leaderboard
     '''
     def display(self):
-        pass
+        r = csv.reader('/lb.csv')
+        for row in r:
+            print(*row)
 
 

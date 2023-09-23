@@ -25,19 +25,20 @@ score = 0
 Process the user's input by tokenizing and lemmatizing it, removing stop words.
 Return a list of processed tokens.
 """
-def process_user_input(user_input):
+def process_character(character):
     pass
 
 
 '''
-Call the processed_user_input() func, 
+Call the processed_character() func, 
 check if the key words : quit, look, take, inventory, go, talk, unlock; exists in the processed_tokens
 return appropriate functions for each of those key words.
 If none of the key words exists in the tokens, return "I don't understand that command."
 '''
-def handle_user_command(user_input):
+def handle_user_command(character):
     global current_room, score
     pass
+
 
 
 '''
@@ -80,7 +81,8 @@ def take_item(tokens):
 This function should return a string with the contents of the inventory
 '''
 def inventory_status():
-    pass
+    for item in inventory:
+        print(item,end=" ")
 
 
 '''
@@ -114,7 +116,35 @@ If the mentioned npc doesnt exist in npcs then return "{character} is not there!
 '''
 def talk_to(tokens):
     character = " ".join(tokens[tokens.index("talk") + 1:])
-    pass
+    item = input("Enter required item: ")
+    if character == "witch":
+            if item == npcs['item_required']:
+                return witch_challenge()
+            else:
+                print(f"{npcs['witch']['dialogue']} You need {npcs['witch']['required_item']} if you need my help")
+    elif character == "knight":
+            if item == npcs['item_required']:
+                return knight_challenge()
+            else:
+                print(f"{npcs['knight']['dialogue']} You need {npcs['knight']['required_item']} if you need my help")
+    elif character == "ghost":
+            if item == npcs['item_required']:
+                return ghost_challenge()
+            else:
+                print(f"{npcs['ghost']['dialogue']} You need {npcs['ghost']['required_item']} if you need my help")
+    elif character == "sorcerer":
+            if item == npcs['item_required']:
+                return sorcerer_challenge() 
+            else:
+                print(f"{npcs['sorcerer']['dialogue']} You need to answer my riddle if you need my help")
+    
+    if character == "witch" or "knight" or "ghost" or "sorcerer":
+            print(f"Updated score is {score}")
+    else: 
+            print(f"{character} is not here!")
+    
+    
+        
 
 
 '''
@@ -126,7 +156,16 @@ Increase 50 points if the tresure box gets unlocked.
 Return appropriate message if any of the conditions are not met.
 '''
 def unlock(tokens):
-    pass
+    if current_room == "bedroom":
+        item = input("Enter item required for unlocking the treasure box: ")
+        if item == "old book":
+            print("You read the old book and found a code. The locked treasure box has been unlocked")
+            score += 50
+        else:
+            print("You don't have appropriate item")
+    else:
+        print("You should be in bedroom to open treasure box")
+            
 
 
 
@@ -136,8 +175,8 @@ def play_game():
     print("Type 'quit' to exit the game.")
 
     while True:
-        user_input = input("> ").strip()
-        response = handle_user_command(user_input)
+        character = input("> ").strip()
+        response = handle_user_command(character)
         print(response)
 
         if current_room == "bedroom" and "treasure box" in inventory:
