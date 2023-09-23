@@ -92,7 +92,18 @@ The user looses 30 points.
 Return a string of appropiate msg if rats exists else return None 
 '''
 def handle_rats():
-    pass
+    global current_room, score
+    room_dict = rooms[current_room]
+    rat_status = False                  # Initializing rat_status variable
+    if "rats" in room_dict.getKeys():       
+        rat_status = room_dict[rats]
+        if rat_status == True and "bread" in inventory:
+            score -= 30
+    
+    else:
+        return None
+
+
 
 
 
