@@ -92,7 +92,7 @@ The user looses 30 points.
 Return a string of appropiate msg if rats exists else return None 
 '''
 def handle_rats():
-   pass
+    pass
 
 
 
