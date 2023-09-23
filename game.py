@@ -26,7 +26,9 @@ Process the user's input by tokenizing and lemmatizing it, removing stop words.
 Return a list of processed tokens.
 """
 def process_user_input(user_input):
-    pass
+    tokens = word_tokenize(user_input.lower())
+    processed_tokens = [lemmatizer.lemmatize(token) for token in tokens if token not in stop_words]
+    return processed_tokens
 
 
 '''
