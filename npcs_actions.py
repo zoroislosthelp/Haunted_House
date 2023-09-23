@@ -14,7 +14,28 @@ def witch_challenge(npc,score):
     print(f"Witch: Excellent! {npc['reward']}")
     
     # Write code here
-
+    rand_num = random.randint(10,100)
+    
+    counter = 60
+    t = True
+    user_input = None
+    while t:
+        mins,secs = divmod(counter,60)
+        timer = "{:02d}:{:02d}".format(mins,secs)
+        print(timer,end = "\r")
+        time.sleep(1)
+        counter -= 1
+        while t:
+            user_input = input("Enter your guess: ")
+            if user_input == rand_num :
+                print("You got it right")
+                score += 20
+                t = False
+            else:
+                print("Wrong answer!! Try again!!")
+                score -= 5
+        if counter == 0:
+            t = False
     return score
 
 
