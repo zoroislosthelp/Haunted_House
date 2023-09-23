@@ -31,7 +31,15 @@ def knight_challenge(npc, score):
     words = ["HARDWORK", "SUNFLOWER", "HAUNTED", "MORGUE"]
 
     # Write code here
-
+    rand_word = random.choice(words)
+    word = random.sample(rand_word,len(rand_word))
+    jumbled = ''.join(word)
+    print(f"{jumbled} ---The given word is jumbled ")
+    user_input = input("Enter your answer: ")
+    if user_input == rand_word:
+        score += 20
+    else:
+        score -= 5
     return score
 
 
