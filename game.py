@@ -56,9 +56,12 @@ The information should include the description of the room and
 also the the items in the room if any
 '''
 def look_around():
-    #write code here
-    pass
-
+    global current_room
+    room_dict = rooms[current_room]
+    room_description = room_dict[description]
+    room_items = room_dict[items]
+    room_str = f"Description : {room_description}\nItems: {room_items}"
+    return room_str
 
 
 '''
