@@ -44,6 +44,8 @@ class Leaderboard:
     Display the scores of each and every person in the leaderboard
     '''
     def display(self):
-        pass
+        r = csv.reader('/lb.csv')
+        for row in r:
+            print(row)
 
 
