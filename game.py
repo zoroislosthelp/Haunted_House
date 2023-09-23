@@ -117,8 +117,16 @@ Call handel_rats() function to check if rats exist
 Everytime user enters a new room, give the description of the room.
 '''
 def go_to(tokens):
+    global current_room
     direction = tokens[tokens.index("go") + 1]
-    pass
+    room_dict = rooms[current_room]
+    room_exits = room_dict[exits]
+    current_room = room_exits[direction]
+    handle_rats()
+    room_dict = rooms[current_room]
+    room_desc = f"{room_dict[description]}"
+    return room_desc
+    
 
 '''
 Write a function to talk to the npcs.
