@@ -55,18 +55,7 @@ def knight_challenge(npc, score):
 
     # Write code here
     
-    rand_word = random.choice(words)
-    word = random.sample(rand_word,len(rand_word))
-    jumbled = ''.join(word)
-    print(f"{jumbled} ---The given word is jumbled ")
-    user_input = input("Enter your answer: ")
-    if user_input == rand_word:
-        score += 20
-    else:
-        score -= 5
-        
-    return score
-
+    
 
 '''
 Print the dialougue and reward of the ghost.
@@ -75,11 +64,7 @@ Award 20 points for finding the required item.
 def ghost_challenge(npc, score):
     #Write your code here
     
-    print(f"Ghost: {npc['dialogue']}")
-    print(f"Ghost: {npc['reward']}")
-    user_input = input("Enter locket: ")
-    if user_input == npc['item_required']:
-        score += 20
+    
     
     return score
 
