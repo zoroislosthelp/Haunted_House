@@ -35,3 +35,5 @@ Find the treasure box in one of the rooms. Score maximum points by completing ch
 ```git push origin <your branch name>```
 - All set, Feel free to contribute and send a Pull Request
 - Wait for your PR to be reviewed and merged
+- For more info on how to contribute check out <a href="https://github.com/IEEE-VIT/Haunted_House/blob/main/CONTRIBUTING.md">```CONTRIBUTING.md```</a>
+
