@@ -64,7 +64,8 @@ Return a string which gives the final score.
 '''
 def quit_game():
     #write code here
-    pass
+    global score
+    return f"Game over. Your final score is {score}"
 
 
 '''
