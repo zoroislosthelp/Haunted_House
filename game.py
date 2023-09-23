@@ -95,8 +95,28 @@ Return an appropriate string for the either of the following cases:
 4. There is nothing to take in the room.
 '''
 def take_item(tokens):
+    global current_room, score
     item = " ".join(tokens[tokens.index("take") + 1:])
-    pass
+    room_dict = rooms[current_room]
+
+    if "items" in room_dict.getKeys():
+        if "treasure box" in room_dict[items] and room_dict[lock]:
+            return("Treasure box is locked")
+        
+        else:
+            for i in room_dict[items]:
+                inventory.append(i)
+                return_str = f"{return_str}, {i}"
+            room_dict[items].clear()
+            return f"Took the item(s) {return_str}"
+    
+    else:
+        return "There is nothing to take in this room"
+            
+        
+
+    
+    
 
 
 '''
