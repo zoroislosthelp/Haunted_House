@@ -186,7 +186,32 @@ If the mentioned npc doesnt exist in npcs then return "{character} is not there!
 '''
 def talk_to(tokens):
     character = " ".join(tokens[tokens.index("talk") + 1:])
-    pass
+    item = input("Enter required item: ")
+    if character == "witch":
+            if item == npcs['item_required']:
+                return witch_challenge()
+            else:
+                print(f"{npcs['witch']['dialogue']} You need {npcs['witch']['required_item']} if you need my help")
+    elif character == "knight":
+            if item == npcs['item_required']:
+                return knight_challenge()
+            else:
+                print(f"{npcs['knight']['dialogue']} You need {npcs['knight']['required_item']} if you need my help")
+    elif character == "ghost":
+            if item == npcs['item_required']:
+                return ghost_challenge()
+            else:
+                print(f"{npcs['ghost']['dialogue']} You need {npcs['ghost']['required_item']} if you need my help")
+    elif character == "sorcerer":
+            if item == npcs['item_required']:
+                return sorcerer_challenge() 
+            else:
+                print(f"{npcs['sorcerer']['dialogue']} You need to answer my riddle if you need my help")
+    
+    if character == "witch" or "knight" or "ghost" or "sorcerer":
+            print(f"Updated score is {score}")
+    else: 
+            print(f"{character} is not here!")
 
 
 '''
