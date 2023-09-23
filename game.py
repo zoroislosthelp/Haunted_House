@@ -26,7 +26,9 @@ Process the user's input by tokenizing and lemmatizing it, removing stop words.
 Return a list of processed tokens.
 """
 def process_user_input(user_input):
-    pass
+    tokens = word_tokenize(user_input.lower())
+    processed_tokens = [lemmatizer.lemmatize(token) for token in tokens if token not in stop_words]
+    return processed_tokens
 
 
 '''
@@ -83,7 +85,9 @@ def take_item(tokens):
 This function should return a string with the contents of the inventory
 '''
 def inventory_status():
-    pass
+    print('The items in the inventory is:')
+    for i in inventory:
+        print(i)
 
 
 '''
