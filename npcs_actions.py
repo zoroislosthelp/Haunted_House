@@ -41,7 +41,8 @@ Print the dialougue and reward of the ghost.
 Award 20 points for finding the required item.
 '''
 def ghost_challenge(npc, score):
-    
+    print(f"Ghost: {npc['dialogue']}")
+    print(f"Ghost: {npc['reward']}")
     #Write your code here
 
     return score
