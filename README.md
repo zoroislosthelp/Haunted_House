@@ -32,7 +32,7 @@ The game has the following rooms:
 8. Attic: You are in a dusty attic filled with old furniture and cobwebs 
 
 ## Layout of the haunted house
-This is the path to the .png file which illustrates the layout of the haunted house: House-Layout.png
+This is the path to the .png file which illustrates the layout of the haunted house: ![Haunted House Layout](House-Layout.png)
 
 ## Goal of the Game
 Find the treasure box in one of the rooms. Score maximum points by completing challenges and collecting items.
