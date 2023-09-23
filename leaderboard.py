@@ -21,9 +21,11 @@ class Leaderboard:
     Write the save function that saves all the scores to the CSV file 
     in highest to lowest scores.
     '''
-    def save(self):
+    def save(self,score):
         #write your code here
-        pass
+        f = open('/lb.csv','w')
+        write = csv.writer(f)
+        write.writerow(score)
 
 
     '''
