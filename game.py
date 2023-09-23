@@ -103,7 +103,7 @@ def handle_rats():
         rat_status = room_dict[rats]
         if rat_status == True and "bread" in inventory:
             score -= 30
-    
+            return "You were attacked by rats, you lost 30 points"
     else:
         return None
 
@@ -122,10 +122,13 @@ def go_to(tokens):
     room_dict = rooms[current_room]
     room_exits = room_dict[exits]
     current_room = room_exits[direction]
-    handle_rats()
-    room_dict = rooms[current_room]
-    room_desc = f"{room_dict[description]}"
-    return room_desc
+    rat_stat = handle_rats()
+    if rat_stat != None:
+        return rat_stat
+    else:
+        room_dict = rooms[current_room]
+        room_desc = f"{room_dict[description]}"
+        return room_desc
     
 
 '''
