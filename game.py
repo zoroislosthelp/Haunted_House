@@ -38,21 +38,26 @@ return appropriate functions for each of those key words.
 If none of the key words exists in the tokens, return "I don't understand that command."
 '''
 def handle_user_command(user_input):
-    global current_room, score, inventory
+    global current_room, score
     processed_tokens = process_user_input(user_input)
-
     if "quit" in processed_tokens:
         return quit_game()
+    
     elif "look" in processed_tokens:
         return look_around()
+    
     elif "take" in processed_tokens:
         return take_item(processed_tokens)
+    
     elif "inventory" in processed_tokens:
         return inventory_status()
+    
     elif "go" in processed_tokens:
         return go_to(processed_tokens)
+    
     elif "talk" in processed_tokens:
         return talk_to(processed_tokens)
+    
     elif "unlock" in processed_tokens:
         return unlock(processed_tokens)
     else:
