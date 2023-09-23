@@ -13,7 +13,10 @@ class Leaderboard:
     def load(self):
         self.data = []
         #write your code here
-        pass
+        file = csv.reader("/lb.csv")
+        for data in file:
+            dic = {data}
+            data.append(dic)
 
 
 
@@ -41,6 +44,8 @@ class Leaderboard:
     Display the scores of each and every person in the leaderboard
     '''
     def display(self):
-        pass
+        r = csv.reader('/lb.csv')
+        for row in r:
+            print(row)
 
 
