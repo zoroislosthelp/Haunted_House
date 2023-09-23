@@ -13,7 +13,10 @@ class Leaderboard:
     def load(self):
         self.data = []
         #write your code here
-        pass
+        file = csv.reader("/lb.csv")
+        for data in file:
+            dic = {data}
+            data.append(dic)
 
 
 
