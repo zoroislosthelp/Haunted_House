@@ -26,7 +26,9 @@ Process the user's input by tokenizing and lemmatizing it, removing stop words.
 Return a list of processed tokens.
 """
 def process_user_input(user_input):
-    pass
+    tokens = word_tokenize(user_input.lower())
+    processed_tokens = [lemmatizer.lemmatize(token) for token in tokens if token not in stop_words]
+    return processed_tokens
 
 
 '''
@@ -54,9 +56,12 @@ The information should include the description of the room and
 also the the items in the room if any
 '''
 def look_around():
-    #write code here
-    pass
-
+    global current_room
+    room_dict = rooms[current_room]
+    room_description = room_dict[description]
+    room_items = room_dict[items]
+    room_str = f"Description : {room_description}\nItems: {room_items}"
+    return room_str
 
 
 '''

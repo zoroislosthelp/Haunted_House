@@ -24,5 +24,12 @@ npcs = {
         "riddle": "What has keys but can't open locks?",
         "answer": "piano",
         "reward": "You answered my riddle correctly. You get 20 points",
+    },
+    "queen":{
+        "description": "A brave queen",
+        "dialogue": "fight me if you can",
+        "riddle": "does the night kingdom really exsist",
+        "answer": "yes",
+        "reward": "You answered my riddle correctly. You get 20 points",
     }
 }
