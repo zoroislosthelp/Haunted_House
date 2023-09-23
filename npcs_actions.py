@@ -1,5 +1,6 @@
 import time
 import random
+from random import shuffle
 
 
 '''
@@ -14,7 +15,29 @@ def witch_challenge(npc,score):
     print(f"Witch: Excellent! {npc['reward']}")
     
     # Write code here
-
+    rand_num = random.randint(10,100)
+    
+    counter = 60
+    t = True
+    user_input = None
+    while t:
+        mins,secs = divmod(counter,60)
+        timer = "{:02d}:{:02d}".format(mins,secs)
+        print(timer,end = "\r")
+        time.sleep(1)
+        counter -= 1
+        while t:
+            user_input = input("Enter your guess: ")
+            if user_input == rand_num :
+                print("You got it right")
+                score += 20
+                t = False
+            else:
+                print("Wrong answer!! Try again!!")
+                score -= 5
+        if counter == 0:
+            t = False
+        
     return score
 
 
@@ -31,9 +54,18 @@ def knight_challenge(npc, score):
     words = ["HARDWORK", "SUNFLOWER", "HAUNTED", "MORGUE"]
 
     # Write code here
-
+    
+    rand_word = random.choice(words)
+    word = random.sample(rand_word,len(rand_word))
+    jumbled = ''.join(word)
+    print(f"{jumbled} ---The given word is jumbled ")
+    user_input = input("Enter your answer: ")
+    if user_input == rand_word:
+        score += 20
+    else:
+        score -= 5
+        
     return score
-
 
 
 '''
@@ -41,9 +73,14 @@ Print the dialougue and reward of the ghost.
 Award 20 points for finding the required item.
 '''
 def ghost_challenge(npc, score):
-    
     #Write your code here
-
+    
+    print(f"Ghost: {npc['dialogue']}")
+    print(f"Ghost: {npc['reward']}")
+    user_input = input("Enter locket: ")
+    if user_input == npc['item_required']:
+        score += 20
+    
     return score
 
 
